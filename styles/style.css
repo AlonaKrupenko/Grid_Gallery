@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+.gallery-section {
+  background-color: rgba(240, 242, 242, 1);
+  padding-top: 7%;
+  padding-bottom: 5%;
+}
+.card-link {
+  padding-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  text-decoration: none;
+}
+.card-link:hover {
+  opacity: 2;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.8)
+  );
+}
+.card-text {
+  margin: 5px 0 5px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  border-bottom: 2px solid white;
+}
+.card-heading {
+  margin: 8px 0 8px;
+  color: #fff;
+  font-size: 1.4em;
+}
+.card-heading:hover {
+  color: #0f70e8;
+}
+.card-background {
+  background-size: cover;
+  background-position: center;
+}
+
+.conainer-gallery {
+  margin: 0 auto;
+  display: grid;
+  max-width: 1160px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, minmax(250px, 1fr));
+  grid-gap: 4px;
+  grid-auto-rows: minmax(300px, auto);
+  grid-template-areas:
+    "photographer fog fog light"
+    "apple fog fog light"
+    "nyc nyc knit rocks";
+}
+.photographer {
+  background-image: url(https://themify.me/demo/themes/peak/files/2016/05/angle-960x1024-600x600.jpg);
+  grid-area: photographer;
+}
+
+.apple-store {
+  background-image: url(https://themify.me/demo/themes/peak/files/2016/05/apple-1209003_1920-1024x652-600x600.jpg);
+  grid-area: apple;
+}
+.woman-fog {
+  background-image: url(https://themify.me/demo/themes/peak/files/2016/04/alone-971122_1920-1024x680-600x600.jpg);
+  grid-area: fog;
+}
+.woman-sunlight {
+  background-image: url(https://themify.me/demo/themes/peak/files/2016/05/person-731142_1920-1024x682-600x600.jpg);
+  grid-area: light;
+}
+.nyc {
+  background-image: url(https://themify.me/demo/themes/peak/files/2016/05/new-york-690567_1280-1024x684-600x600.jpg);
+  grid-area: nyc;
+}
+.knit {
+  background-image: url(https://themify.me/demo/themes/peak/files/2016/04/knit-869221_1920-300x300.jpg);
+  grid-area: knit;
+}
+.rocks {
+  background-image: url(https://themify.me/demo/themes/peak/files/2016/04/photo-1422665717225-1a37f226c92a.jpeg-300x300.jpg);
+  grid-area: rocks;
+}
+
+@media only screen and (max-width: 681px) {
+  .conainer-gallery {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "photographer"
+      "fog"
+      "light"
+      "apple"
+      "nyc"
+      "knit"
+      "rocks";
+  }
+}
